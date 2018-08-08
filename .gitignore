@@ -1,0 +1,10 @@
+.envrc
+.terraform
+.DS_Store
+*.pem
+*.tfstate
+*.py
+*.zip
+*.pub
+*.backup
+key/
