@@ -1,9 +1,9 @@
 ###
 #
-# IAM Role
+# IAM Role for Cluster
 #
-resource "aws_iam_role" "eks" {
-    name = "eks"
+resource "aws_iam_role" "eks-cluster" {
+    name = "eks-cluster"
 
   assume_role_policy = <<POLICY
 {
@@ -23,10 +23,10 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "eks-cluster-policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = "${aws_iam_role.eks.name}"
+  role       = "${aws_iam_role.eks-cluster.name}"
 }
 
 resource "aws_iam_role_policy_attachment" "eks-service-policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
-  role       = "${aws_iam_role.eks.name}"
+  role       = "${aws_iam_role.eks-cluster.name}"
 }
