@@ -3,7 +3,7 @@
 # IAM Role for Cluster
 #
 resource "aws_iam_role" "eks-cluster" {
-    name = "eks-cluster"
+  name = "eks-cluster"
 
   assume_role_policy = <<POLICY
 {

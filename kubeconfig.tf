@@ -3,7 +3,7 @@
 # kube config
 #
 locals {
-    kubeconfig = <<KUBECONFIG
+  kubeconfig = <<KUBECONFIG
 
 apiVersion: v1
 clusters:
@@ -33,5 +33,5 @@ KUBECONFIG
 }
 
 output "kubeconfig" {
-    value = "${local.kubeconfig}"
+  value = "${local.kubeconfig}"
 }
